@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reOrderArray</title>
+</head>
+<body>
+    <h1>reOrderArray</h1>
+    <script>
+        let foodArray = ['spagetti', 'janssons frestelse', 'pannkakor'] 
+
+        function reOrderArray (foodInput, upOrDown) {
+
+            let indexOfInput //deklarerar en tom variabel
+
+            for (let i = 0; i < foodArray.length; i++) {
+                if(foodInput === foodArray[i]) { // jämför värdet av foodInput (spagetti) med alla strängar i foodArray
+                    indexOfInput = i // när den hittar rätt sträng ger den variabeln indexOfInput det nummer som motsvarar strängens plats. I det här fallet 1
+                    console.log('indexOfInput', indexOfInput)
+                }
+            }
+
+            if(upOrDown === 'up') {
+                let temporaryStorage = foodArray[indexOfInput - 1] 
+                foodArray[indexOfInput - 1] = foodInput 
+                foodArray[indexOfInput] = temporaryStorage 
+            }
+            else if(upOrDown === 'down') {
+                let temporaryStorage = foodArray[indexOfInput + 1] //lagrar spagetti som kommer att ersättas på nästa rad 
+                foodArray[indexOfInput + 1] = foodInput // ersätter spagetti med janssons frestelse
+                foodArray[indexOfInput] = temporaryStorage // ersätter janssons frestelse med spagetti
+            }
+            else {
+                console.log('inaccurate input upOrDown: ', upOrDown) // fångar upp om något annat än up or down skickas in i funktionen
+            }
+        }
+
+        console.log('innan flytt', foodArray)
+        reOrderArray('janssons frestelse', 'down') // Anropar funktionen reOrderArray med strängen down som första argument och strängen spagetti som andra argument
+        console.log('efter flytt', foodArray)
+
+        //fler lösningar på samma problem: https://stackoverflow.com/questions/2440700/reordering-arrays
+    </script>
+</body>
+</html>
