@@ -28,9 +28,9 @@
                 foodArray[indexOfInput] = temporaryStorage 
             }
             else if(upOrDown === 'down') {
-                let temporaryStorage = foodArray[indexOfInput + 1] //lagrar spagetti som kommer att ersättas på nästa rad 
-                foodArray[indexOfInput + 1] = foodInput // ersätter spagetti med janssons frestelse
-                foodArray[indexOfInput] = temporaryStorage // ersätter janssons frestelse med spagetti
+                let temporaryStorage = foodArray[indexOfInput + 1] //lagrar pannkakor som kommer att ersättas på nästa rad 
+                foodArray[indexOfInput + 1] = foodInput // ersätter pannkakor med janssons frestelse
+                foodArray[indexOfInput] = temporaryStorage // ersätter janssons frestelse med pannkakor
             }
             else {
                 console.log('inaccurate input upOrDown: ', upOrDown) // fångar upp om något annat än up or down skickas in i funktionen
